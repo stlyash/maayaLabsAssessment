@@ -55,14 +55,13 @@ adDate = list(pub['date_start'])
 sp = list(pub['spend'])
 plat = list(pub['publisher_platform'])
 for i in range(len(plat)):
-    if plat[i] == 'audience_network':
+    if plat[i] == 'audience_network' or 'messenger':
         plat[i] = 'facebook'
 spend = [0] * (len(dateSor))
 for i in range(len(plat)):
     if plat[i] == 'facebook' or plat[i] == 'instagram':
         b = adDate[i]+"+"+plat[i]
         idx = dateSor.index(b)
-        print(idx)
         spend[idx] += sp[i]
 
 
